@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Page</title>
+
+    <!-- CSS Styling -->
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #545454;
+        }
+
+        footer {
+            background-color: rgba(255, 124, 192, 0.5); 
+            color: #030303; 
+            text-align: center; 
+            padding: 10px 0; 
+            width: 100%; 
+            position: relative; 
+        }
+
+        .content {
+            width: 60%; 
+            margin: 0 auto; 
+        }
+    </style>
+    
+</head>
+<body link="#ff7cbf" vlink="#e550ac">
+    <a href="Home.html"><img src="Images/Logo.png" alt="Broken Image" height="180" width="180" align="left"/></a>
+
+    <table border="1" align="center" height="40%" width="70%">
+        <tr  style="font-size: 110%;">
+            <th width="16%"> <a href="Home.html"> Home </a> </th>
+            <th width="16%"> <a href="Products.html" onclick="denyAccess(event)"> Products </a> </th>
+            <th width="18%"> <a href="AboutUs.html"> About Us </a> </th>
+        </tr>
+        
+    </table></br> </br> 
+
+    <center><h1 style="color:#ff7cbf; font-size: 250%;">HOME</h1></center> </br>
+
+    <hr color="#ff7cbf" size = "8" width = "100%"/>
+
+    <!-- Error message and image -->
+    <center>
+        <a><img src="Images/Error.png" alt="Broken Image" height="300" width="250"/></a>
+
+        <h2 style="color: rgb(215, 3, 3);">Error! Too many incorrect attempts!</h2>
+    </center>
+
+    </br></br>
+    <footer>
+        <div class="content">
+            <p><b>Contact Us</b></p>
+            <p>Contact Number: (876)894-2896 </p>
+            <p>Email: <a href="mailto: 2301555@utech.edu.jm?subject=Black Beauty Cosmetics" title="Click here to send an email to Black Beauty Cosmetics">2301555@utech.edu.jm</a></p>
+            <p>Address: 39 Andrews Meadow, Kingston 11</p>
+            </br>
+            <p>&copy; 2024, Black Beauty Cosmetics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Section -->
+    <script type="text/javascript">
+        function denyAccess(event){
+            event.preventDefault();
+            alert("ACCESS DENIED! PLEASE LOG IN TO GAIN ACCESS. CLICK 'HOME' TO LOG IN");
+            
+        }
+    </script>
+</body>
+</html>

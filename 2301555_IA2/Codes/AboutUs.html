@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta tag for responsive design on different devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Beauty Cosmetics - About Us</title>
+    
+    <!-- CSS Styles -->
+    <style> 
+        /* Style for the body, setting font and background color */
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #545454;
+        }
+        
+        /* Style for the "About Us" section */
+        .about-us{
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: rgba(255, 124, 192, 0.5); 
+            width: 40%;
+            border: 1px solid #cccccc;
+        }
+
+        /* Button style */
+        button {
+            padding: 10px 20px;
+            background-color: #bb0060;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Footer style: setting background color, alignment, and size */
+        footer {
+            background-color: rgba(255, 124, 192, 0.5); 
+            color: #030303; 
+            text-align: center; 
+            padding: 10px 0; 
+            width: 100%; 
+            position: relative; 
+        }
+
+        /* Content width for footer */
+        .content {
+            width: 60%; 
+            margin: 0 auto; 
+        }
+
+    </style>
+    
+</head>
+<body link="#ff7cbf" vlink="#e550ac"> <!-- Custom link color settings -->
+    <a name="Top"></a> <!-- Anchor for "Return to Top" link -->
+    
+    <!-- Logo linking back to the home page -->
+    <a href="Home.html"><img src="Images/Logo.png" alt="Broken Image" height="180" width="180" align="left"/></a>
+
+    <!-- Navigation Table for the main menu -->
+    <table border="1" align="center" height="40%" width="70%">
+        <tr  style="font-size: 110%;">
+            <th width="16%"> <a href="Home.html"> Home </a> </th>
+            <th width="16%"> <a href="Products.html" onclick="denyAccess(event)"> Products </a> </th>
+            <th width="18%"> <a href="AboutUs.html"> About Us </a> </th>
+        </tr>
+        
+    </table></br> </br> 
+
+    <center><h1 style="color:#ff7cbf; font-size: 250%;">ABOUT US</h1></center> </br>
+
+    <hr color="#ff7cbf" size = "8" width = "100%"/>
+    
+    <!-- "About Us" table containing personal and company info -->
+    <table class="about-us" align="center">
+        <tr>
+            <td>
+                <center>
+                    <h1 style="color:#bb0060;">All About Black Beauty Cosmetics</h1>
+                    <p>
+                        Name: Olivia McFarlane
+                        </br></br>
+                        ID Number: 2301555
+                        </br></br>
+                        <!-- Mailto link for personal email -->
+                        Email: <a href="mailto: oliviamcfarlane29@gmail.com?subject=Black Beauty Cosmetics Comments and Queries" title="Click here to send an email to Olivia McFarlane">oliviamcfarlane29@gmail.com</a> 
+                        </br></br>
+                        Module Name: Web Programming 
+                        </br></br>
+                        Module Code: CIT2011
+                        </br></br>
+                        Assignment Name: Individual Assignment 2
+                        </br></br>
+                        Date of Class: Monday
+                        </br></br>
+                        Time of Class: 5:00 pm
+                        </br></br>
+                        <b>Queries or Concerns? Feel free to contact us with the email below.</b>
+                        </br></br>
+                        <!-- Mailto link for company email -->
+                        Company Email: <a href="mailto: 2301555@utech.edu.jm?subject=Black Beauty Cosmetics Comments and Queries" title="Click here to send an email to Black Beauty Cosmetics">2301555@utech.edu.jm</a> 
+                    </p>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    </br></br>
+
+    <!-- "Return to Top" link inside a table for navigation -->
+    <table border="3" align="center" height="40%" width="12%" bgcolor="#dfcece" cellspacing="" cellpadding="">
+        <tr  style="font-size: 90%;"> 
+            <th width="16%"> <a href="#Top"> RETURN TO THE TOP </a> </th>
+        </tr>
+    </table>
+
+    </br></br>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="content">
+            <p><b>Contact Us</b></p>
+            <p>Contact Number: (876)894-2896 </p>
+            <p>Email: <a href="mailto: 2301555@utech.edu.jm?subject=Black Beauty Cosmetics" title="Click here to send an email to Black Beauty Cosmetics">2301555@utech.edu.jm</a></p>
+            <p>Address: 39 Andrews Meadow, Kingston 11</p>
+            </br>
+            <p>&copy; 2024, Black Beauty Cosmetics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Section -->
+    <script type="text/javascript">
+        // Function to deny user access to the "Products" page unless logged in
+        function denyAccess(event){
+            event.preventDefault();
+            alert("ACCESS DENIED! PLEASE LOG IN TO GAIN ACCESS. CLICK 'HOME' TO LOG IN"); 
+        }
+    </script>
+
+</body>
+</html>

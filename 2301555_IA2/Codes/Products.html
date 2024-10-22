@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta tag for responsive design on different devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Beauty Cosmetics - Products</title>
+
+    <!-- CSS Styles -->
+    <style>
+        /* Body styling for background and font */
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #545454;
+        }
+
+        /* Styling for product list */
+        .product-list{
+            border-collapse: separate;
+            border-spacing: 2;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 80%;
+        }
+    
+        input {
+            width: 50%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    
+        button {
+            padding: 10px 20px;
+            background-color: #bb0060;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Styling for product cells */
+        td{
+            border: 1px solid #cccccc; 
+            border-radius: 20px;
+            background-color: rgba(255, 124, 192, 0.5);
+        }
+
+        footer {
+            background-color: rgba(255, 124, 192, 0.5); 
+            color: #030303; 
+            text-align: center; 
+            padding: 10px 0; 
+            width: 100%; 
+            position: relative; 
+        }
+
+        .content {
+            width: 60%; 
+            margin: 0 auto; 
+        }
+
+        /* Styling for cart summary */
+        .cart-summary{
+            margin: 5em;
+            padding: 2em;
+            background-color: #ff7cbf;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        
+    </style>
+</head>
+<body link="#ff7cbf" vlink="#e550ac">
+    <a name="Top"></a>
+    <a href="Home.html"><img src="Images/Logo.png" alt="Broken Image" height="180" width="180" align="left"/></a>
+
+    <table border="1" align="center" height="40%" width="70%">
+        <tr  style="font-size: 110%;">
+            <th width="16%"> <a href="Home.html" onclick="return warning()"> Home </a> </th>
+            <th width="16%"> <a href="Products.html" onclick="return warning2()"> Products </a> </th>
+            <th width="18%"> <a href="AboutUs.html" onclick="return warning2()"> About Us </a> </th>
+        </tr>
+        
+    </table></br> </br> 
+
+    <center><h1 style="color:#ff7cbf; font-size: 250%;">PRODUCTS</h1></center> </br>
+
+    <hr color="#ff7cbf" size = "8" width = "100%"/>
+
+    <!-- Table to display product listings, accept quantity and add product to cart -->
+    <table class="product-list" align="center" cellspacing="100" cellpadding="10">
+        <tr>
+            <td class="product">
+                <a><img src="Images/P1.png" alt="Broken Image" height="380" width="280"/></a>
+                <h3>Flora</h3>
+                <p class="price">$2500</p>
+                <p>Description:</p>
+                <ul type = "square">
+                    <li>Rich floral fragrance</li>
+                    <li>Moisturizes your skin</li>
+                    <li>Long lasting</li>
+                    <li>Contains: Body butter base and floral fragrance oils</li>
+                </ul>
+                <label for="quantity-P1">Quantity:</label>
+                <select id="quantity-P1">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button onclick="addToCart('Flora', 2500, document.getElementById('quantity-P1').value)">Add to Cart</button>
+
+            </td>
+
+            <td class="product">
+                <a><img src="Images/P2.png" alt="Broken Image" height="380" width="280"/></a>
+                <h3>Cinnamon Swirl</h3>
+                <p class="price">$2500</p>
+                <p>Description:</p>
+                <ul type = "square">
+                    <li>Moisturizes your skin</li>
+                    <li>Cinnamon fragrance</li>
+                    <li>Long lasting</li>
+                    <li>Contains: Body butter base and cinnamon fragrance oils</li>
+                </ul>
+                <label for="quantity-P2">Quantity:</label>
+                <select id="quantity-P2">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button onclick="addToCart('Cinnamon Swirl', 2500, document.getElementById('quantity-P2').value)">Add to Cart</button>
+
+            </td>
+
+            <td class="product">
+                <a><img src="Images/P3.png" alt="Broken Image" height="380" width="280"/></a>
+                <h3>Strawberry Vanilla Swirl</h3>
+                <p class="price">$3500</p>
+                <p>Description:</p>
+                <ul type = "square">
+                    <li>Moisturizes your skin</li>
+                    <li>Strawberry and vanilla fragrance</li>
+                    <li>Half strawberry, half vanilla</li>
+                    <li>Contains: Body butter base and strawberry and vanilla fragrance oils</li>
+                </ul>
+                <label for="quantity-P3">Quantity:</label>
+                <select id="quantity-P3">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button onclick="addToCart('Strawberry Vanilla Swirl', 3500, document.getElementById('quantity-P3').value)">Add to Cart</button>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td class="product">
+                <a><img src="Images/P4.png" alt="Broken Image" height="380" width="280"/></a>
+                <h3>Cotton Candy</h3>
+                <p class="price">$1500</p>
+                <p>Description:</p>
+                <ul type = "square">
+                    <li>Moisturizes your skin</li>
+                    <li>Sweet fragrance</li>
+                    <li>Long lasting</li>
+                    <li>Contains: Shae butter, soy butter, sweet almond oil, olive oil, coconut oil, vitamin E oil, fragrance oil</li>
+                </ul>
+                <label for="quantity-P4">Quantity:</label>
+                <select id="quantity-P4">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button onclick="addToCart('Cotton Candy', 1500, document.getElementById('quantity-P4').value)">Add to Cart</button>
+
+            </td>
+
+            <td class="product">
+                <a><img src="Images/P5.png" alt="Broken Image" height="380" width="280"/></a>
+                <h3>Island Breeze</h3>
+                <p class="price">$1500</p>
+                <p>Description:</p>
+                <ul type = "square">
+                    <li>Moisturizes your skin</li>
+                    <li>Fresh fragrance</li>
+                    <li>Long lasting</li>
+                    <li>Contains: Shae butter, soy butter, sweet almond oil, olive oil, coconut oil, vitamin E oil, fragrance oil</li>
+                </ul>
+                <label for="quantity-P5">Quantity:</label>
+                <select id="quantity-P5">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button onclick="addToCart('Island Breeze', 1500, document.getElementById('quantity-P5').value)">Add to Cart</button>
+
+            </td>
+
+            <td class="product">
+                <a><img src="Images/P6.jpeg" alt="Broken Image" height="380" width="280"/></a>
+                <h3>Full House Hair Groth Oil</h3>
+                <p class="price">$4500</p>
+                <p>Description:</p>
+                <ul type = "square">
+                    <li>Strengthens and moisturizes your hair</li>
+                    <li>Promotes hair growth</li>
+                    <li>Has anti-fungal and anti-inflammatory properties</li>
+                    <li>Contains: Aloe vera, grapeseed oil, sweet almond oil, coconut oil, vitamine E oil, hair growth herbs</li>
+                </ul>
+                <label for="quantity-P6">Quantity:</label>
+                <select id="quantity-P6">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button onclick="addToCart('Full House Hair Groth Oil', 4500, document.getElementById('quantity-P6').value)">Add to Cart</button>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td class="product">
+                <a><img src="Images/P7.png" alt="Broken Image" height="380" width="280"/></a>
+                <h3>Rose-Mint</h3>
+                <p class="price">$2500</p>
+                <p>Description:</p>
+                <ul type = "square">
+                    <li>Strengthens your hair</li>
+                    <li>Reduces Dandruff</li>
+                    <li>Soothes scalp</li>
+                    <li>Contains: Olive oil, pepper mint oil and rosemary</li>
+                </ul>
+                <label for="quantity-P7">Quantity:</label>
+                <select id="quantity-P7">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button onclick="addToCart('Rose-Mint', 2500, document.getElementById('quantity-P7').value)">Add to Cart</button>
+
+            </td>
+
+            <td class="product">
+                <a><img src="Images/P8.png" alt="Broken Image" height="380" width="280"/></a>
+                <h3>Coco</h3>
+                <p class="price">$2500</p>
+                <p>Description:</p>
+                <ul type = "square">
+                    <li>Strengthens your hair</li>
+                    <li>Has moisturizing properties</li>
+                    <li>Has anti-fungal and anti-inflammatory properties</li>
+                    <li>Contains: 100% Coconut Oil</li>
+                </ul>
+                <label for="quantity-P8">Quantity:</label>
+                <select id="quantity-P8">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button onclick="addToCart('Coco', 2500, document.getElementById('quantity-P8').value)">Add to Cart</button>
+
+            </td>
+
+            <td class="product">
+                <a><img src="Images/P9.png" alt="Broken Image" height="380" width="280"/></a>
+                <h3>Castor</h3>
+                <p class="price">$2500</p>
+                <p>Description:</p>
+                <ul type = "square">
+                    <li>Promotes hair and scalp health</li>
+                    <li>Improves moisture</li>
+                    <li>Boosts hair growth</li>
+                    <li>Prevents scalp infections</li>
+                    <li>Contains: 100% Castorl oil</li>
+                </ul>
+                <label for="quantity-P9">Quantity:</label>
+                <select id="quantity-P9">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button onclick="addToCart('Castor', 2500, document.getElementById('quantity-P9').value)">Add to Cart</button>
+
+            </td>
+        </tr>
+    </table>
+
+    <!-- Cart Summary Section -->
+    <center>
+        <div class="cart-summary">
+            <h2>Cart &#128722 (Tax NOT Included)</h2>
+            <p id="cart-items"></p> 
+            <button onclick="calculateCharges()">Checkout</button>
+            <button onclick="cancelOrder()">Cancel</button>
+            <button onclick="exit()">Exit</button>
+        </div>
+    </center>
+
+    </br></br>
+    <table border="3" align="center" height="40%" width="12%" bgcolor="#dfcece" cellspacing="" cellpadding="">
+        <tr  style="font-size: 90%;"> 
+            <th width="16%"> <a href="#Top"> RETURN TO THE TOP </a> </th>
+        </tr>
+    </table>
+
+    </br></br>
+    <footer>
+        <div class="content">
+            <p><b>Contact Us</b></p>
+            <p>Contact Number: (876)894-2896 </p>
+            <p>Email: <a href="mailto: 2301555@utech.edu.jm?subject=Black Beauty Cosmetics" title="Click here to send an email to Black Beauty Cosmetics">2301555@utech.edu.jm</a></p>
+            <p>Address: 39 Andrews Meadow, Kingston 11</p>
+            </br>
+            <p>&copy; 2024, Black Beauty Cosmetics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Section -->
+    <script type="text/javascript">
+        // Warning before navigating away from the page
+        function warning(){
+            var Confirm = confirm("If you continue, all progress will be lost and you will be logged out. Do you want to proceed?");
+            return Confirm;
+        }
+
+        function warning2(){
+            var Confirm = confirm("If you continue, all progress will be lost. Do you want to proceed?");
+            return Confirm;
+        }
+
+        // Global arrays to store available products, prices, and quantities
+        const availableProducts = ['Flora', 'Cinnimon Swirl', 'Strwberry Vanilla Swirl', 'Cotton Candy', 'Island Breeze', 'Full House Hair Groth Oil', 'Rose-Mint', 'Coco', 'Castor']; 
+        const availablePrices = [2500, 2500, 3500, 1500, 1500, 4500, 2500, 2500, 2500]; // Prices for products in the same order as availableProducts
+        let availableQuantities = [10, 10, 10, 10, 10, 10, 10, 10, 10]; // Inventory quantities for each product
+        let cart = [];
+
+        // Add product to the cart (with selected quantity)
+        function addToCart(product, price, quantity) {
+            quantity = parseInt(quantity); // Convert selected quantity to integer
+            const existingProductIndex = cart.findIndex(item => item.product === product);
+
+            if (existingProductIndex !== -1) {
+                cart[existingProductIndex].quantity += quantity; // If product already exists, increase quantity
+            } else {
+                cart.push({ product, price, quantity }); // Add new product to the cart
+            }
+
+            displayCart(); // Update the cart display
+        }
+
+        // Display the cart items
+        function displayCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = ''; // Clear current cart display
+
+            cart.forEach(item => {
+                cartItems.innerHTML += `<li>${item.product} - $${item.price} x ${item.quantity} = $${item.price * item.quantity}</li>`;
+            });
+        }
+
+        // Function to calculate all charges (subtotal, tax, discount, total)
+        function calculateCharges() {
+            let subtotal = 0;
+            let taxRate = 0.15; // 15% tax
+            let discountRate = 0.10; // 10% discount if subtotal exceeds $50
+
+            // Calculate subtotal
+            cart.forEach(item => {
+                subtotal += item.price * item.quantity;
+            });
+
+            // Calculate tax and discount
+            const tax = subtotal * taxRate;
+            let discount = 0;
+            if (subtotal > 5000) {
+                discount = subtotal * discountRate;
+            }
+
+            // Calculate total after tax and discount
+            const total = subtotal + tax - discount;
+
+            // Save these values to localStorage for display on the invoice page
+            localStorage.setItem('cart', JSON.stringify(cart)); // Store the cart data
+            localStorage.setItem('subtotal', subtotal.toFixed(2));
+            localStorage.setItem('tax', tax.toFixed(2));
+            localStorage.setItem('discount', discount.toFixed(2));
+            localStorage.setItem('total', total.toFixed(2));
+
+            // Redirect to invoice page
+            window.location.href = "Invoice.html";
+        }
+
+        // Cancel the order (reset cart) after confirmation
+        function cancelOrder() {
+            var confirmCancel = confirm("Are you sure you want to cancel your order? All items will be removed from the cart.");
+    
+            if (confirmCancel) {
+                cart = []; // Reset the cart
+                displayCart(); // Clear the cart display
+            } else {
+                // User clicked "Cancel", do nothing
+                return false;
+            }
+        }
+
+        // Exit function (redirects to login page after confirmation)
+        function exit() {
+            var confirmExit = confirm("Are you sure you want to exit? All progress will be lost, and you will be logged out.");
+    
+            if (confirmExit) {
+                window.location.href = "Home.html"; // Redirect to the home page
+            } else {
+                // User clicked "Cancel", do nothing
+                return false;
+            }
+        }
+
+    </script>
+</body>
+</html>

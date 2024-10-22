@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Beauty Cosmetics - Invoice</title>
+
+    <!-- CSS Styles -->
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #545454;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #bb0060;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Invoice container styling */
+        .invoice-container {
+            margin: 2em;
+            padding: 2em;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+
+            /* Table styles for displaying products */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 2em;
+            }
+
+            table, th, td {
+                border: 1px solid #ccc;
+            }
+
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+        }
+
+        footer {
+            background-color: rgba(255, 124, 192, 0.5); 
+            color: #030303; 
+            text-align: center; 
+            padding: 10px 0; 
+            width: 100%; 
+            position: relative; 
+        }
+
+        .content {
+            width: 60%; 
+            margin: 0 auto; 
+        }
+    </style>
+</head>
+<body link="#ff7cbf" vlink="#e550ac">
+    <a name="Top"></a>
+    <a href="Home.html"><img src="Images/Logo.png" alt="Broken Image" height="180" width="180" align="left"/></a>
+
+    <table border="1" align="center" height="40%" width="70%">
+        <tr  style="font-size: 110%;">
+            <th width="16%"> <a href="Home.html" onclick="return warning()"> Home </a> </th>
+            <th width="16%"> <a href="Products.html" onclick="return warning2()"> Products </a> </th>
+            <th width="18%"> <a href="AboutUs.html" onclick="return warning2()"> About Us </a> </th>
+        </tr>
+        
+    </table></br> </br> 
+
+    <center><h1 style="color:#ff7cbf; font-size: 250%;">INVOICE</h1></center> </br>
+
+    <hr color="#ff7cbf" size = "8" width = "100%"/>
+
+    <!-- Invoice container -->
+    <div class="invoice-container">
+        <h2>Order Summary</h2>
+
+        
+        <!-- Product Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="invoice-items"> <!-- Items will be dynamically loaded here --> 
+            </tbody>
+            <tr>
+                <td colspan="3" align="right"><b>Subtotal</b> </td>
+                <td>$<span id="subtotal"></span></td>
+            </tr>
+
+            <tr>
+                <td colspan="3" align="right"><b>Taxes (15%)</b></td>
+                <td>$<span id="tax"></span></td>
+            </tr>
+
+            <tr>
+                <td colspan="3" align="right"><b>Discount (10%)</b></td>
+                <td>- $<span id="discount"></span></td>
+            </tr>
+
+            <tr>
+                <td colspan="3" align="right"><b>Total</b></td>
+                <td><b>$<span id="total"></span></b></td>
+            </tr>
+        </table>
+
+        <button onclick="exit()">Exit</button>
+        <button onclick="cancelOrder()">Cancel</button>
+    </div>
+
+    </br></br>
+    <table border="3" align="center" height="40%" width="12%" bgcolor="#dfcece" cellspacing="" cellpadding="">
+        <tr  style="font-size: 90%;"> 
+            <th width="16%"> <a href="#Top"> RETURN TO THE TOP </a> </th>
+        </tr>
+    </table>
+
+    </br></br>
+    <footer>
+        <div class="content">
+            <p><b>Contact Us</b></p>
+            <p>Contact Number: (876)894-2896 </p>
+            <p>Email: <a href="mailto: 2301555@utech.edu.jm?subject=Black Beauty Cosmetics" title="Click here to send an email to Black Beauty Cosmetics">2301555@utech.edu.jm</a></p>
+            <p>Address: 39 Andrews Meadow, Kingston 11</p>
+            </br>
+            <p>&copy; 2024, Black Beauty Cosmetics. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Section -->
+    <script type="text/javascript">
+        function warning(){
+            var Confirm = confirm("If you continue, all progress will be lost and you will be logged out. Do you want to proceed?");
+            return Confirm;
+        }
+
+        function warning2(){
+            var Confirm = confirm("If you continue, all progress will be lost. Do you want to proceed?");
+            return Confirm;
+        }
+        
+        // Function to load invoice details from localStorage
+        function loadInvoice() {
+            // Retrieve the cart from localStorage
+            const cart = JSON.parse(localStorage.getItem('cart'));
+            const invoiceItems = document.getElementById('invoice-items');
+
+            if (cart && cart.length > 0) {
+                cart.forEach(item => {
+                    // Create a new table row for each item
+                    const row = document.createElement('tr');
+
+                    row.innerHTML = `
+                        <td>${item.product}</td>
+                        <td>${item.quantity}</td>
+                        <td>$${item.price}</td>
+                        <td>$${(item.price * item.quantity).toFixed(2)}</td>
+                    `;
+
+                    invoiceItems.appendChild(row); // Append the row to the table body
+                });
+            } else {
+                console.log("No cart data found");
+            }
+
+            // Retrieve stored charges (subtotal, tax, discount, total)
+            const subtotal = localStorage.getItem('subtotal');
+            const tax = localStorage.getItem('tax');
+            const discount = localStorage.getItem('discount');
+            const total = localStorage.getItem('total');
+
+            // Display charges if they exist
+            if (subtotal && tax && discount && total) {
+                document.getElementById('subtotal').innerText = subtotal;
+                document.getElementById('tax').innerText = tax;
+                document.getElementById('discount').innerText = discount;
+                document.getElementById('total').innerText = total;
+            } else {
+                console.log("No charge data found in localStorage");
+            }
+        }
+
+        // Call the function to load the invoice details when the page loads
+        loadInvoice();
+
+        // Function to exit (redirect to home page). Confirms first
+        function exit() {
+            var confirmExit = confirm("Are you sure you want to exit? All progress will be lost, and you will be logged out.");
+    
+            if (confirmExit) {
+                window.location.href = "Home.html"; // Redirect to the home page
+            } else {
+                // User clicked "Cancel", do nothing
+                return false;
+            }
+        }
+
+        // Function to cancel (redirect to product page). Confirms first
+        function cancelOrder() {
+            var confirmCancel = confirm("Are you sure you want to cancel the order?");
+            if (confirmCancel) {
+                // Clear localStorage or cart
+                localStorage.clear();
+                window.location.href = "Products.html"; // Redirect to product page
+            }
+        }
+    </script>
+</body>
+</html>
